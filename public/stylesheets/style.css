@@ -16,7 +16,7 @@ body {
   padding: 15px 20px;
   align-items: center;
   flex-wrap:wrap;
-  min-height: 120px;
+  min-height: 90px;
   gap: 12%;
 }
 
@@ -27,7 +27,7 @@ body {
   color: rgb(214, 170, 25) !important;
 }
 .logo {
-  width: 250px;
+  width: 180px;
 }
 
 nav{
@@ -74,6 +74,13 @@ nav > ul {
   align-items: center;
   gap: 5px;
 }
+.link {
+  text-decoration: none;
+  color: white;
+}
+.link:hover {
+  color: rgb(214, 170, 25);
+}
 .button {
   font-size: 1rem;
   font-family: Poppins, sans-serif;
@@ -86,6 +93,7 @@ nav > ul {
   background-color: white;
   color: var(--green);
 }
+
 .inner-ul {
   display: flex;
   flex-wrap: wrap;
@@ -105,10 +113,20 @@ nav > ul {
   display: none;
 }
 
-
+.colu {
+  display: flex;
+  gap: 21px;
+}
 
 
 @media (max-width: 973px) {
+  .colu {
+    display: flex;
+    flex-direction: column;
+    padding-left: 0;
+    gap: 7px;
+    margin-block-end: 10px;
+  }
   .menu {
     display: block !important;
   }
@@ -120,7 +138,8 @@ nav > ul {
     display: none;
   }
   .show {
-    display: block !important;
+    display: flex !important;
+    flex-direction: column !important;
   }
   .show > li {
     margin-block-end: 15px;
@@ -140,6 +159,7 @@ nav > ul {
 
 
 @media(max-width: 766px) {
+
   #header {
     font-size: 20px;
   }
@@ -176,7 +196,7 @@ nav > ul {
     justify-content: flex-start;
   }
   .logo {
-    width: 100%;
+    width: 60%;
   }
 }
 
@@ -201,7 +221,7 @@ nav > ul {
   display: flex;
   gap: 1.5rem;
   justify-content: space-around;
-  padding-inline: 3rem;
+  padding-inline: 2rem;
   flex-wrap: wrap;
 }
 .s-h1 {
@@ -224,9 +244,36 @@ nav > ul {
   font-weight: 100;
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 0.7rem;
-  list-style-type:circle;
+  list-style-type: none;
+  padding-inline-start: 0;
+}
+#skills  ul > h5 {
+  align-self: center;
 }
 #skills a {
   color: white;
+}
+#skills a:hover {
+  color: rgb(214, 170, 25);
+}
+
+body::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	background-color: #ffffff;
+}
+
+body::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #f3e59d;
+}
+
+body::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #908f8d;
 }
