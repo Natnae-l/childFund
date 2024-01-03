@@ -51,7 +51,7 @@ nav > ul {
   align-items: center;
   font-size: 1rem;
   font-weight: 600;
-  font-family: Lato, sans-serif;
+  font-family: Poppins, sans-serif;
 }
 
 .icon {
@@ -75,8 +75,8 @@ nav > ul {
   gap: 5px;
 }
 .button {
-  font-size: 1.1rem;
-  font-family: Lato, sans-serif;
+  font-size: 1rem;
+  font-family: Poppins, sans-serif;
   border: 1px solid white;
   padding: 0.6rem;
   border-radius: 0.3rem;
@@ -92,8 +92,8 @@ nav > ul {
   gap: 1rem;
   align-items: center;
   font-size: 1rem;
-  font-weight: 600;
-  font-family: Lato, sans-serif;
+  font-weight: 400;
+  font-family: Poppins, sans-serif;
   list-style: none;
 }
 .menu {
@@ -183,3 +183,50 @@ nav > ul {
 
 
 
+
+
+#skills {
+  background-color: var(--green);
+  color: rgb(221, 216, 216);
+  font-family: Poppins;  
+  box-sizing: border-box;
+
+  display: flex;
+  flex-direction: column;
+  gap: 1.9rem;
+  padding-block-start: 2.4rem;
+  padding-inline-end: 0.5rem;
+}
+.skills {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: space-around;
+  padding-inline: 3rem;
+  flex-wrap: wrap;
+}
+.s-h1 {
+  color: rgb(221, 216, 216);
+  font-size: 3rem;
+  font-weight: 500;
+  border: 1px solid transparent;
+  border-bottom-color: linear-gradient(to right, rgb(221, 216, 216), black);
+  border-bottom-width: 0.25rem;
+  border-bottom-right-radius: 1.5rem;
+  padding-left: 1rem;
+}
+.skills > section {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+#skills  ul {
+  font-size: 0.9rem;
+  font-weight: 100;
+  display: flex;
+  flex-direction: column;
+  gap: 0.7rem;
+  list-style-type:circle;
+}
+#skills a {
+  color: white;
+}
