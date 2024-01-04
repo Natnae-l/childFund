@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head'); %>
+<body>
+    <%- include('../partials/header'); %>
+    <form class="signup-form">
+        <h4 style="align-self: flex-start;">Be a member :</h4>
+        <input type="text" name="firstName" placeholder="First Name" required>
+        <input type="text" name="lastName" placeholder="Last Name" required>
+        <input type="email" name="email" placeholder="Email" required>
+        <input type="password" name="password1" placeholder="Password" required>
+        <input type="password" name="password2" placeholder="Confirm Password" required>
+        <div style="display: flex; gap: 1rem; align-items: center; justify-content: center;" class="form-sub">
+            <button type="submit">Sign Up</button>
+            <p style="padding-top: 1rem;">Have an account: <a href="/login">Sign In</a></p>
+        </div>
+        
+    </form>
+    <%- include('../partials/footer'); %>
+</body>
+</html>

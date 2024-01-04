@@ -1,0 +1,90 @@
+#works  h3 {
+    font-size: 1.8rem;
+    font-family: popins, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-weight: 700;
+    color: rgb(67, 130, 87);
+}
+#works {
+    background-color: white;
+    /* background-color: linear-gradient(rgba(228, 243, 230, 0.492) white); */
+    padding: 2rem;
+    box-sizing: border-box;
+    width: 100%; 
+}
+.project-wrapper {
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    min-height: 20vh;
+    margin-bottom: 3rem;
+}
+.project-name {
+    font-size: 1.4rem;
+}
+.donate {
+    text-decoration: none;
+    padding: .8rem 1.5rem;
+    border: 1px solid var(--green);
+    color: var(--green);
+    font-family: Poppins, sans-serif;
+    font-weight: 700;
+}
+.donate:hover {
+    color: white;
+    background-color: var(--green);
+}
+.project {
+    /* border: 1px solid red; */
+    min-height: 20vh;
+    flex: 1;    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+}
+.project * {
+    font-family: popins, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1rem;
+    font-weight: 400;
+}
+.project-img {
+    /* border: 1px solid red; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 30vh;
+    flex: 1;   
+}
+
+.project-links {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+}
+.link-github {
+    width: 22px;
+    height: 22px;
+}
+.link-github img {
+    max-width: 100%;
+}
+.pro-img {
+    max-width: 100%;
+    border-radius: 0.3rem;
+    box-shadow: 10px 19px 34px 10px rgba(0,0,0,0.1);
+}
+#about {
+    width: 100%;
+    padding: 3.5rem 1.5rem;
+    font-family: Poppins, sans-serif;
+    background-color: rgb(106, 134, 100);
+    color: white;
+    font-size: 1rem !important;
+    border-radius: 0.1rem;
+}
+#about h3{
+    font-family: Poppins, sans-serif;
+    color: white;
+}

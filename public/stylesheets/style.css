@@ -120,12 +120,23 @@ nav > ul {
 
 
 @media (max-width: 973px) {
+  #promise {
+    padding: 1rem !important;
+    align-items: flex-start;
+    flex-wrap: nowrap;
+  }
+  .login-card {
+    width: 65% !important;
+  }
   .colu {
     display: flex;
     flex-direction: column;
     padding-left: 0;
     gap: 7px;
     margin-block-end: 10px;
+  }
+  .project-wrapper {
+    flex-direction: column-reverse;
   }
   .menu {
     display: block !important;
@@ -163,6 +174,9 @@ nav > ul {
   #header {
     font-size: 20px;
   }
+  .login-card, .signup-form input {
+    width: 65% !important;
+  }
   
   #header > ul {
     width: 100%;
@@ -190,13 +204,30 @@ nav > ul {
     gap: 5px;
   }
 }
+@media (max-width: 450px) {
+ .project-wrapper {
+    width: 95% !important;
+  } 
+  .login-card,.signup-form input {
+    width: 85% !important;
+  }
+}
 @media(max-width: 403px) {
   #header > ul {
     width: 100%;
     justify-content: flex-start;
   }
+ .login-card, .signup-form input {
+    width: 95% !important;
+  }
   .logo {
     width: 60%;
+  }
+  .form-sub {
+    flex-direction: column;
+  }
+  .form-sub > p {
+    padding-top: 0 !important;
   }
 }
 
