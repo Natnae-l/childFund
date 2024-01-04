@@ -13,6 +13,9 @@ require('dotenv').config()
 
 // initialized app
 const app = express();
+
+// connect DB
+require('./config/databaseConfig')()
 app.listen(process.env.PORT, () => console.log(`app listening on port: ${process.env.PORT}`))
 
 
