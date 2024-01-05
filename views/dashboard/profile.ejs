@@ -1,0 +1,40 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head'); %>
+<body>
+    <%- include('./partials/header'); %>
+    <section class="dashboard">
+        <%- include('./partials/nav'); %>
+    <section class="third-nav update" style="display: flex; justify-content: flex-start; flex-direction: column; align-items: center; width: 900px;">
+        <h1>User Profile</h1>
+        <form action="/users/update" method='post' class="update-form">
+          <div class="input-box">
+            <label>First Name:</label>
+            <input type="text" name="name" required value="<%= locals.currentUser.firstName%>"/>
+          </div>
+          <div class="input-box">
+            <label>Last Name</label>
+            <input type="text" name="name" required value="<%= locals.currentUser.lastName%>"/>
+          </div>
+  
+          <div class="input-box">
+            <label>Email Address</label>
+            <input type="text" name="email" placeholder="Enter email address" required value="<%= locals.currentUser.email%>"/>
+          </div>
+          <div class="input-box">
+            <label>Old password</label>
+            <input type="password" name="oldPassword" placeholder="old password" required/>
+          </div>
+          <div class="input-box">
+            <label>New password</label>
+            <input type="password" placeholder="new password" name="newPassword" required/>
+          </div>
+          <button type="submit">Update</button>
+        </form>
+      </section>
+</section>
+    </section>
+       <%- include('../partials/footer') %>
+</body>
+</html>

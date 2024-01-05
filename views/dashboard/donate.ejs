@@ -1,0 +1,37 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head'); %>
+<body>
+    <%- include('./partials/header'); %>
+    <section class="dashboard">
+        <%- include('./partials/nav'); %>
+        <section class="third-nav donater">
+            <form action="/donate" method="post" class="donate-form">
+                <h3>Welcome to Donation center</h3>
+                <div>
+                    <label for="donate">please select your plan</label>
+                    <select name="donation-plan" id="donate">
+                        <option value="monthly">monthly</option>
+                        <option value="">quarterly</option>
+                        <option value="">yearly</option>
+                        <option value="">life time</option>
+                    </select> 
+                </div>
+                <button type="submit">Confirm</button>
+                
+            </form>
+            <section class="donate-p2">
+                <h2>For donation:</h2>
+                <ul>
+                    <li>Nib Bank: <span>7000050152907</span></li>
+                    <li>Enat Bank: <span>061113295573400</span></li>
+                    <li>CBE: <span>1000486851841</span></li>
+                </ul>
+            </section>
+        </section>
+</section>
+    </section>
+       <%- include('../partials/footer') %>
+</body>
+</html>

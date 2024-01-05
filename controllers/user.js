@@ -53,10 +53,13 @@ addUser = async(req, res, next) => {
           });
         }
 }
-logUser = async(req, res, next) => {
-    
+logOut = async(req, res, next) => {
+  req.logout(function(err) {
+      if (err) { return next(err); }
+      res.redirect('/login');
+    });
 }
 
 module.exports = {
-    addUser, logUser
+    addUser, logOut
 }
