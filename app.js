@@ -61,6 +61,7 @@ app.use(function(req, res, next) {
 // global variable
 app.use((req, res, next) => {
   res.locals.currentUser = req.user;
+  res.locals.title = 'express'
   next();
 });
 
