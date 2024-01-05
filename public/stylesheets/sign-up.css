@@ -14,17 +14,17 @@
     width: 45%;
     padding: 10px;
     margin-bottom: 4px;
-    border: 1px solid #5b924b;
+    border: 1px solid var(--green);
     border-radius: 3px;
 }
 .signup-form button {
     padding: 10px 20px;
-    background-color: #337535;
+    background-color: var(--green);
     color: white;
     border: none;
     border-radius: 5px;
     cursor: pointer;
 }
 .signup-form button:hover {
-    background-color: #45a049;
+    background-color: rgb(52, 52, 162);
 }

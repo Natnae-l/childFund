@@ -1,5 +1,5 @@
 :root {
-  --green: #007a45;
+  --green: #506ba5;
   --b: 3px;   /* border thickness */
   --s: .45em; /* size of the corner */
   --color: #373B44;
@@ -27,7 +27,7 @@ body {
   color: rgb(214, 170, 25) !important;
 }
 .logo {
-  width: 180px;
+  width: 100px;
 }
 
 nav{
@@ -49,9 +49,11 @@ nav > ul {
   display: flex;
   gap: 1rem;
   align-items: center;
+  justify-content: flex-end;
   font-size: 1rem;
   font-weight: 600;
   font-family: Poppins, sans-serif;
+  padding-right: 1.5rem;
 }
 
 .icon {
@@ -125,6 +127,9 @@ nav > ul {
     align-items: flex-start;
     flex-wrap: nowrap;
   }
+  #header {
+    flex-wrap: nowrap;
+  }
   .login-card {
     width: 65% !important;
   }
@@ -173,6 +178,7 @@ nav > ul {
 
   #header {
     font-size: 20px;
+    flex-direction: row !important;
   }
   .login-card, .signup-form input {
     width: 65% !important;
@@ -186,7 +192,7 @@ nav > ul {
     gap: 2rem;
   }
   nav > ul {
-    flex-direction: column;
+    /* flex-direction: column; */
     align-items: flex-start;
     min-height: 100px;
     
@@ -217,11 +223,17 @@ nav > ul {
     width: 100%;
     justify-content: flex-start;
   }
+  #header {
+    flex-wrap: wrap;
+  }
+  nav > ul {
+    flex-direction: row;
+  }
  .login-card, .signup-form input {
     width: 95% !important;
   }
   .logo {
-    width: 60%;
+    width: 35%;
   }
   .form-sub {
     flex-direction: column;
