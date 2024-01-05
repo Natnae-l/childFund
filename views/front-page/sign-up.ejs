@@ -3,8 +3,17 @@
     <%- include('../partials/head'); %>
 <body>
     <%- include('../partials/header'); %>
-    <form class="signup-form">
+    
+    <form class="signup-form" action="/signup" method="post">
         <h4 style="align-self: flex-start;">Be a member :</h4>
+        <% if (typeof(errors) != undefined && errors.length > 0) {%>
+        <%errors.forEach(item => {%>
+            <div class="error" onclick="this.hidden=true" style="width: 40%; display: flex; justify-content: space-between; background-color: rgb(253, 194, 194); padding: 0.6rem 1rem; border-radius: 1rem;">
+                <p><%= item.msg %></p>
+                <p >X</p>
+              </div>
+            <%})%>
+        <%}%>
         <input type="text" name="firstName" placeholder="First Name" required>
         <input type="text" name="lastName" placeholder="Last Name" required>
         <input type="email" name="email" placeholder="Email" required>

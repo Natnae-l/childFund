@@ -8,8 +8,16 @@
     <div class="login-container">
         <div class="login-card">
             <h3>Login</h3>
+            <% if (typeof(errors) != undefined && errors.length > 0) {%>
+                <%errors.forEach(item => {%>
+                    <div class="error" onclick="this.hidden=true" style="width: 40%; display: flex; justify-content: space-between; background-color: rgb(253, 194, 194); padding: 0.6rem 1rem; border-radius: 1rem;">
+                        <p><%= item.msg %></p>
+                        <p >X</p>
+                      </div>
+                    <%})%>
+                <%}%>
             <form>
-                <input type="text" name="username" placeholder="Username" required>
+                <input type="text" name="email" placeholder="Username" required>
                 <input type="password" name="password" placeholder="Password" required>
                 <button type="submit">Login</button>
             </form>

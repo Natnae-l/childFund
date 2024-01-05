@@ -4,6 +4,9 @@
   --s: .45em; /* size of the corner */
   --color: #373B44;
 }
+.disappear {
+  display: none;
+}
 body {
   padding: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
