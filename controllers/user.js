@@ -62,6 +62,7 @@ logOut = async(req, res, next) => {
 
 updateUser = async (req, res, next) => {
   let user = await User.findOne({_id: req.user._id})
+  console.log(req.user._id)
   
   if (user){
     bcrypt.compare(req.body.oldPassword, user.password, (err, isMatch) => {
@@ -74,8 +75,8 @@ updateUser = async (req, res, next) => {
 
 
           if (typeof(req.body.newPassword) != undefined && req.body.oldPassword != req.body.newPassword){
-            bcrypt.compare(req.body.oldPassword, user.password, function(err, res) {
-              if (res){
+            bcrypt.compare(req.body.oldPassword, user.password, function(err, response) {
+              if (response){
               bcrypt.genSalt(10, (err, salt) => {
               bcrypt.hash(req.body.newPassword, salt, (err, hash) => {
                 if (err) throw err;
