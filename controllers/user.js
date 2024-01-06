@@ -1,6 +1,7 @@
 const User = require('../model/user');
 const Message = require('../model/messageModel');
 const bcrypt = require('bcryptjs')
+const moment = require('moment')
 
 
 addUser = async(req, res, next) => {
@@ -105,20 +106,24 @@ updateUser = async (req, res, next) => {
 sendMessage = async (req, res, next) => {
   let newMessage = {
     message: req.body.message,
-    user: req.user._id
+    user: req.user._id,
+    createdAt: Date.now()
   }
   if (newMessage.message){
     await new Message(newMessage).save()
-    console.log('message sent')
-    res.redirect('/dashboard')
+    next()
   } else {
     res.render('dashboard/sendMessage')
   }
+}
+alertEmail = async(req, res, next) => {
+  const email = User.find({}, 'email');
+  res.redirect('/dashboard')
 }
 getMessage = async (req, res, next) => {
   let messages = await Message.find({}).sort({createdAt: -1})
   res.render('dashboard/dashboard', { messages })
 }
 module.exports = {
-    addUser, logOut, updateUser, sendMessage,getMessage
+    addUser, logOut, updateUser, sendMessage,getMessage, alertEmail
 }

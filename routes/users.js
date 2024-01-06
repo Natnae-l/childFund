@@ -28,6 +28,6 @@ router.post('/login', passport.authenticate('local', {
 }));
 router.post('/logout', userController.logOut) 
 // message controller
-router.post('/sendmessage', userController.sendMessage)
+router.post('/sendmessage',userController.alertEmail, userController.sendMessage)
 
 module.exports = router;
