@@ -9,14 +9,19 @@
             <h3>My messages</h3>
             <h5>From VCO to <span><%= locals.currentUser.firstName%></span></h5>
             <section class="co">
-                <ul class="message-board">
-                    <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus, necessitatibus?</li>
-                    <li class="img-container"><img src="/images/delete.png" alt=""></li>
-                </ul>
-                <ul class="message-board">
-                    <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus, necessitatibus?</li>
-                    <li class="img-container"><img src="/images/delete.png" alt=""></li>
-                </ul>
+                <% if(messages.length > 0){%>
+                    <% messages.forEach(item => {%>
+                    <ul class="message-board">
+                        <li><%= item.message%></li>
+                        <li><%= item.createdAt.getMonth()%></li>
+                    </ul>
+                    <%})%>
+                
+                <%} else {%>
+                    <ul class="message-board">
+                        <li>You don't have messages</li>
+                    </ul>
+                    <%}%>
             </section>
             
         </section>

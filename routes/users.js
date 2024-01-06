@@ -9,9 +9,7 @@ const authenticate = require('../config/auth')
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
-router.get('/dashboard', authenticate.ensureAuthenticated, (req, res, next) => {
-  res.render('dashboard/dashboard', { title: 'Express' })
-})
+router.get('/dashboard', authenticate.ensureAuthenticated, userController.getMessage)
 router.get('/dashboard/profile', async(req, res, next) => {
   res.render('dashboard/profile')
 })
@@ -28,6 +26,8 @@ router.post('/login', passport.authenticate('local', {
   successRedirect: '/dashboard',
   failureRedirect: '/login'
 }));
-router.post('/logout', userController.logOut)
+router.post('/logout', userController.logOut) 
+// message controller
+router.post('/sendmessage', userController.sendMessage)
 
 module.exports = router;
