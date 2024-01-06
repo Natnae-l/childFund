@@ -102,5 +102,5 @@ updateUser = async (req, res, next) => {
 }
 
 module.exports = {
-    addUser, logOut
+    addUser, logOut, updateUser
 }

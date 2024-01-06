@@ -18,6 +18,7 @@ router.get('/dashboard/profile', async(req, res, next) => {
 router.get('/dashboard/donate', async(req, res, next) => {
   res.render('dashboard/donate')
 })
+router.post('/update/user', userController.updateUser)
 router.post('/signup', userController.addUser)
 
 router.post('/login', passport.authenticate('local', {

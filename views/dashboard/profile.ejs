@@ -8,7 +8,7 @@
         <%- include('./partials/nav'); %>
     <section class="third-nav update" style="display: flex; justify-content: flex-start; flex-direction: column; align-items: center; width: 900px;">
         <h1>User Profile</h1>
-        <form action="/users/update" method='post' class="update-form">
+        <form action="/update/user" method='post' class="update-form">
           <div class="input-box">
             <label>First Name:</label>
             <input type="text" name="name" required value="<%= locals.currentUser.firstName%>"/>
