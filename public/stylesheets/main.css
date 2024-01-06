@@ -278,3 +278,19 @@
     width: 35px;
     align-self: center;
 }
+.message-board.form {
+    display: flex;
+    flex-direction: column;
+    border: 0;
+}
+.message-board.form button {
+    width: 100px;
+    background-color: white;
+    border: 2px solid var(--green);
+}
+.message-board.form  textarea {
+    border: 1.6px solid var(--green);
+    border-radius: 0.3rem;
+    padding: 1rem;
+    box-sizing: border-box;
+}

@@ -18,6 +18,9 @@ router.get('/dashboard/profile', async(req, res, next) => {
 router.get('/dashboard/donate', async(req, res, next) => {
   res.render('dashboard/donate')
 })
+router.get('/sendmessage', (req, res, next) => {
+  res.render('dashboard/sendMessage')
+})
 router.post('/update/user', userController.updateUser)
 router.post('/signup', userController.addUser)
 
