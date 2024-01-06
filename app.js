@@ -61,11 +61,11 @@ app.use(function(req, res, next) {
 // global variable
 app.use((req, res, next) => {
   res.locals.currentUser = req.user;
-  res.locals.title = 'express'
+  res.locals.title = 'VCO charity'
   next();
 });
 
-// routes
+// routes 
 app.use('/', indexRouter);
 app.use('/', usersRouter);
 

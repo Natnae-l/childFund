@@ -60,6 +60,47 @@ logOut = async(req, res, next) => {
     });
 }
 
+updateUser = async (req, res, next) => {
+  let user = await User.findOne({_id: req.user._id})
+  
+  if (user){
+    bcrypt.compare(req.body.oldPassword, user.password, (err, isMatch) => {
+      if (err) throw err;
+      if (isMatch) {
+        let updater = {};
+        
+          if (req.body.firstName && req.body.firstName != user.firstName) updater.firstName = req.body.firstNname;
+          if (req.body.email && req.body.email != user.email) updater.email = req.body.email;
+
+
+          if (typeof(req.body.newPassword) != undefined && req.body.oldPassword != req.body.newPassword){
+            bcrypt.compare(req.body.oldPassword, user.password, function(err, res) {
+              if (res){
+              bcrypt.genSalt(10, (err, salt) => {
+              bcrypt.hash(req.body.newPassword, salt, (err, hash) => {
+                if (err) throw err;
+                
+                updater.password = hash;
+                if (Object.values(updater).length > 0) {
+                    User.findByIdAndUpdate({_id: req.user._id}, updater)
+                      .then(data => {
+                        res.redirect('/dashboard')
+                      })
+                      .catch(err => console.log(err))
+                } else if(Object.values(updater).length == 0){
+                  res.redirect('/login')
+                }
+              })
+            })}  
+          });
+            }         
+      } else {
+        res.send('User not updated')
+      }
+    });
+  }
+}
+
 module.exports = {
     addUser, logOut
 }

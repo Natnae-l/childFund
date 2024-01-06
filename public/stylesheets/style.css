@@ -130,6 +130,9 @@ nav > ul {
     align-items: flex-start;
     flex-wrap: nowrap;
   }
+  .staff {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
   #header {
     flex-wrap: nowrap;
   }
@@ -183,6 +186,10 @@ nav > ul {
     font-size: 20px;
     flex-direction: row !important;
   }
+  .staff {
+    grid-template-columns: repeat(2, 1fr) !important;
+    padding: 1rem !important;
+  }
   .login-card, .signup-form input {
     width: 65% !important;
   }
@@ -211,6 +218,12 @@ nav > ul {
     align-items: flex-start;
     padding-inline-start: 0;
     gap: 5px;
+  }
+}
+@media (max-width: 519px) {
+  .staff {
+    grid-template-columns: repeat(1, 1fr) !important;
+    place-items: center;
   }
 }
 @media (max-width: 450px) {

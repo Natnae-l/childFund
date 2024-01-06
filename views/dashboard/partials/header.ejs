@@ -1,13 +1,17 @@
 <nav>
     <img src="/images/menu.png" alt="" class="menu">
-      <ul class="ful">
-      <ul class="colu">
+      <ul class="ful" style="justify-content: space-between; align-items: center;">
+        <p style="align-self:center ;">Welcome to VCO</p>
+        <div style="display: flex; gap: 1rem; align-items: center; font-size: 1.1rem;">
+           <ul class="colu">
        <a href="#skills" class="link">CONTACT</a>
       </ul>
       
       <ul class="inner-ul">
           <li class="button" ><%= locals.currentUser.firstName%></li>
       </ul>
+        </div>
+     
      
     </ul>
   </nav>
