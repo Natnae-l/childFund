@@ -5,7 +5,21 @@
     <%- include('./partials/header') %>
     <section class="dashboard">
         <%- include('./partials/nav') %>
-        <section class="third-nav"><p>message</p></section>
+        <section class="third-nav dash-message">
+            <h3>My messages</h3>
+            <h5>From VCO to <span><%= locals.currentUser.firstName%></span></h5>
+            <section class="co">
+                <ul class="message-board">
+                    <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus, necessitatibus?</li>
+                    <li class="img-container"><img src="/images/delete.png" alt=""></li>
+                </ul>
+                <ul class="message-board">
+                    <li>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Natus, necessitatibus?</li>
+                    <li class="img-container"><img src="/images/delete.png" alt=""></li>
+                </ul>
+            </section>
+            
+        </section>
     </section>
        <%- include('../partials/footer') %>
 </body>

@@ -241,3 +241,40 @@
 .member img{
     border-radius: 0.2rem;
 }
+
+/* message */
+
+.dash-message {
+    font-family: Poppins, sans-serif;
+    padding: 1rem 2rem;
+}
+.co {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;    
+    overflow-y: scroll;
+    max-height: 40vh;
+}
+.message-board {
+    padding: 0.5rem 1rem;
+    border-radius: 0.4rem;
+    display: flex;
+    /* flex-direction: column; */
+    width: 50%;
+    margin: 0 auto;
+    border: 1px solid var(--green);
+    list-style: none;
+    gap: 20px;
+
+}
+.dash-message h5 {
+    width: fit-content;
+    margin: 1rem auto;
+}
+.message-board img{
+    width: 25px;
+}
+.img-container {
+    width: 35px;
+    align-self: center;
+}
