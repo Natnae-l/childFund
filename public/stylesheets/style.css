@@ -182,9 +182,42 @@ nav > ul {
 
 @media(max-width: 766px) {
 
-  #header {
+  #header { 
     font-size: 20px;
     flex-direction: row !important;
+  }
+  .second-nav {
+    position:static;
+    z-index: 10 !important;
+    background-color: white;
+    display: none !important;
+    justify-content: center !important;
+  }
+  .second-nav ul {
+    width: 40% !important;
+  }
+  .second-width {
+    width: 100% !important;
+    grid-column: 1 / -1 !important;
+    display: flex !important;
+    /* display: flex; */
+    gap: 2rem;
+    min-height: 60vh;
+  }
+  .co {
+    width: 100% !important;
+  } 
+  .message-board {
+    width: 90% !important;
+  }
+  .third-nav, .third-nav.update {
+    position: relative;
+    z-index: -10;
+    width: 100%;
+    grid-column: 1 / -1 !important;
+  }
+  .third-nav.update {
+    width: 100% !important;
   }
   .staff {
     grid-template-columns: repeat(2, 1fr) !important;
@@ -224,6 +257,10 @@ nav > ul {
   .staff {
     grid-template-columns: repeat(1, 1fr) !important;
     place-items: center;
+  }
+  .message-board {
+    width: 100% !important;
+    font-size: 1rem !important;
   }
 }
 @media (max-width: 450px) {

@@ -10,24 +10,24 @@ router.get('/', function(req, res, next) {
   res.send('respond with a resource');
 });
 router.get('/dashboard', authenticate.ensureAuthenticated, userController.getMessage)
-router.get('/dashboard/profile', async(req, res, next) => {
+router.get('/dashboard/profile', authenticate.ensureAuthenticated, async(req, res, next) => {
   res.render('dashboard/profile')
 })
-router.get('/dashboard/donate', async(req, res, next) => {
+router.get('/dashboard/donate', authenticate.ensureAuthenticated, async(req, res, next) => {
   res.render('dashboard/donate')
 })
-router.get('/sendmessage', (req, res, next) => {
+router.get('/sendmessage', authenticate.ensureAuthenticated, (req, res, next) => {
   res.render('dashboard/sendMessage')
 })
-router.post('/update/user', userController.updateUser)
+router.post('/update/user',authenticate.ensureAuthenticated, userController.updateUser)
 router.post('/signup', userController.addUser)
 
 router.post('/login', passport.authenticate('local', {
   successRedirect: '/dashboard',
   failureRedirect: '/login'
 }));
-router.post('/logout', userController.logOut) 
+router.post('/logout',authenticate.ensureAuthenticated, userController.logOut) 
 // message controller
-router.post('/sendmessage',userController.alertEmail, userController.sendMessage)
+router.post('/sendmessage',authenticate.ensureAuthenticated, userController.sendMessage,userController.alertEmail)
 
 module.exports = router;

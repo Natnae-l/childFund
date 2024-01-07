@@ -117,11 +117,49 @@ sendMessage = async (req, res, next) => {
   }
 }
 alertEmail = async(req, res, next) => {
-  const email = User.find({}, 'email');
+  const email = (await User.find({}, 'email')).map(item => item.email);
+  console.log(email)
+  const nodemailer = require("nodemailer");
+
+const transporter = nodemailer.createTransport({
+   service: "gmail",
+   auth: {
+      user: process.env.email,
+      pass: process.env.password,
+      port: 465,
+      secure: true,
+   }
+});
+
+const mailOptions = {
+   from: "natnaelmverse1@gmail.com",
+   to: email,
+   subject: "VCO charity Org.",
+   html: `<p>Greetings from VCO </p>
+          <p>You have new message, please login to your account to see it!</p>
+   <a href="http://localhost:3000/login">check your message</a>
+   `
+};
+
+ transporter.sendMail(mailOptions, function(error, info){
+   if(error){
+      console.log(error);
+   }else{
+      console.log("Email sent: " + info.response);
+   }
+});
   res.redirect('/dashboard')
 }
 getMessage = async (req, res, next) => {
   let messages = await Message.find({}).sort({createdAt: -1})
+  messages = messages.map(item => {
+    return (
+      {
+        message: item.message,
+        createdAt: moment(item.createdAt).format('DD MMMM YYYY')
+      }
+    )
+  })
   res.render('dashboard/dashboard', { messages })
 }
 module.exports = {

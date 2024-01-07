@@ -1,8 +1,4 @@
 document.querySelector('.menu').addEventListener('click', () => {
-    document.querySelector(".ful").classList.toggle("show")
+    document.querySelector(".ful").classList.toggle("show");
+    document.querySelector(".second-nav").classList.toggle("second-width")
 })
-// Array.from(document.querySelectorAll('.error')).forEach(item => {
-//   item.addEventListener('click', (event) => {
-//    console.log(event)
-// })  
-// })
