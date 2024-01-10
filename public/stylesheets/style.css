@@ -7,6 +7,7 @@
 .s-links {
   width: 30px;
 }
+
 .link-ul {
   list-style: none;
   display: flex;
@@ -17,6 +18,7 @@
 .disappear {
   display: none;
 }
+
 body {
   padding: 0;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -29,44 +31,42 @@ body {
   padding: 15px 20px;
   align-items: center;
   flex-wrap:wrap;
-  min-height: 90px;
-  gap: 12%;
+  min-height: 70px;
+  gap: 3rem;
+  position: sticky;
+  top: 0;
 }
 
-#header > ul{
-  justify-self: flex-end;
-}
 #header > ul li:hover span{
   color: rgb(214, 170, 25) !important;
 }
 .logo {
-  width: 100px;
+  width: 70px;
 }
 
 nav{
-  width: 100%;
-  min-height: 70px;
-  background-color: var(--green);
-  padding: 0.3rem;
+  /* padding: 0.3rem; */
   box-sizing: border-box;
-  color: white;
+  /* color: white; */
   display: flex;
-  flex-direction: column;
-  position: sticky;
-  top: 0;
+  align-items: center !important;
+}
+nav >ul {
+  align-items: center !important;
 }
 nav > ul> li{
   list-style: none;
 }
-nav > ul {
+.menu-li {
+  background-color: #373B44;
+  position: fixed;
+  top: 95px;
   display: flex;
-  gap: 1rem;
-  align-items: center;
-  justify-content: flex-end;
-  font-size: 1rem;
-  font-weight: 600;
-  font-family: Poppins, sans-serif;
-  padding-right: 1.5rem;
+  flex-direction: column;
+}
+.menu-li > nav {
+  display: flex;
+  flex-direction: column;
 }
 
 .icon {
@@ -125,12 +125,19 @@ nav > ul {
   border-radius: .3rem;
   align-self: flex-end;
   margin-right: 2rem;
-  display: none;
+  position: absolute;
+  top: 2rem;
+  right: -10px;
+  /* display: none; */
 }
 
 .colu {
   display: flex;
   gap: 21px;
+  font-size: 1.1rem;
+  padding-top: 1rem;
+  align-items: center;
+  flex-wrap: nowrap;
 }
 
 
@@ -139,6 +146,9 @@ nav > ul {
     padding: 1rem !important;
     align-items: flex-start;
     flex-wrap: nowrap;
+  }
+  nav, .nav {
+    display: none;
   }
   .staff {
     grid-template-columns: repeat(3, 1fr) !important;
