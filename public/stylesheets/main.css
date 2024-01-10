@@ -1,3 +1,24 @@
+.mission {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 0.5rem;
+    padding: 4rem;
+    min-height: 40vh;
+    justify-content: center;
+    color: #345075;
+}
+.mission h3 {
+    font-family: Poppins, sans-serif;
+    font-size: 1.8rem;
+    justify-content: center;
+    text-align: center;
+
+}
+.mission p {
+    font-family: Poppins, sans-serif;
+    font-size: 1rem;
+}
 #works  h3 {
     font-size: 1.8rem;
     font-family: popins, Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
