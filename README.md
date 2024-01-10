@@ -1,1 +1,2 @@
 <h1>🌟 Project Description: "Visionary Education Hub"</h1>
+<p>Visionary Education Hub" is a full-stack application built to support a non-governmental organization (NGO) dedicated to facilitating educational access and holistic development for visually impaired children. The platform is designed to showcase the unique stories and aspirations of these individuals while providing a secure donation gateway to support the NGO's cause. This initiative aims to foster inclusivity, encourage empowerment, and facilitate interactions within the community.</p>
