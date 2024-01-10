@@ -4,6 +4,16 @@
   --s: .45em; /* size of the corner */
   --color: #373B44;
 }
+.s-links {
+  width: 30px;
+}
+.link-ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: .5rem 1rem;
+  align-items: center;
+}
 .disappear {
   display: none;
 }
