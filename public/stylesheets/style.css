@@ -45,11 +45,12 @@ body {
 }
 
 nav{
-  /* padding: 0.3rem; */
+  padding: 0.3rem;
   box-sizing: border-box;
-  /* color: white; */
+  color: white;
   display: flex;
   align-items: center !important;
+  background-color: var(--green);
 }
 nav >ul {
   align-items: center !important;
@@ -57,20 +58,33 @@ nav >ul {
 nav > ul> li{
   list-style: none;
 }
-.menu-li {
-  background-color: #373B44;
+.menu-lii {
+  height: 100vh;
+  align-items: center;
+  background-color: var(--green);
   position: fixed;
-  top: 95px;
+  top: 130px;
+  right: 0;
   display: flex;
   flex-direction: column;
+  font-family: Poppins, sans-serif;
+  width: 80%;
+  z-index: 10;
+  font-size: 2rem;
+  display: none;
 }
-.menu-li > nav {
+.menu-lii  .colu-1, .nav-1 {
   display: flex;
   flex-direction: column;
+  list-style: none;
+  font-size: 2rem;
+  padding-left: 0;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .icon {
-  width: 21px;
+  width: 25px;
   /* height: 26px; */
 }
 .dropdown:hover>.dropdown-menu {
@@ -120,16 +134,20 @@ nav > ul> li{
   list-style: none;
 }
 .menu {
-  width: 40px;
+  width: 50px !important;
   background-color: white;
   border-radius: .3rem;
   align-self: flex-end;
   margin-right: 2rem;
-  position: absolute;
+  position: fixed;
   top: 2rem;
   right: -10px;
-  /* display: none; */
+  display: none;
 }
+.show {
+  display: flex !important;
+}
+
 
 .colu {
   display: flex;
@@ -155,6 +173,7 @@ nav > ul> li{
   }
   #header {
     flex-wrap: nowrap;
+    height: 130px;
   }
   .login-card {
     width: 65% !important;
@@ -179,10 +198,6 @@ nav > ul> li{
     
     display: none;
   }
-  .show {
-    display: flex !important;
-    flex-direction: column !important;
-  }
   .show > li {
     margin-block-end: 15px;
   }
@@ -198,10 +213,16 @@ nav > ul> li{
   gap: 1rem;
 
 }
-
+@media (max-width: 1000px) {
+  .menu-lii {
+    display: none;
+  }
+}
 
 @media(max-width: 766px) {
-
+  .menu-lii {
+    width: 100%;
+  }
   #header { 
     font-size: 20px;
     flex-direction: row !important;
@@ -261,12 +282,7 @@ nav > ul> li{
     
     display: none;
   }
-  .show {
-    display: block !important;
-  }
-  .show > li {
-    margin-block-end: 15px;
-  }
+ 
   .inner-ul {
     align-items: flex-start;
     padding-inline-start: 0;
@@ -282,6 +298,7 @@ nav > ul> li{
     width: 100% !important;
     font-size: 1rem !important;
   }
+  
 }
 @media (max-width: 450px) {
  .project-wrapper {
@@ -305,9 +322,7 @@ nav > ul> li{
  .login-card, .signup-form input {
     width: 95% !important;
   }
-  .logo {
-    width: 35%;
-  }
+  
   .form-sub {
     flex-direction: column;
   }
