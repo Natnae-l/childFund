@@ -1,4 +1,26 @@
-
+.m-article {
+    width: 100%;
+    padding: 1rem 2rem;
+    color: var(--green);
+}
+.ads {
+    display: flex;
+    gap: 15px;
+}
+.ads a {
+    text-decoration: none;
+}
+.article {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    font-weight: 600;
+    font-family: 'Courier New', Courier, monospace,'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.article h3 {
+    padding-top: -2rem;
+}
 .Section_top{
     width: 100%;
     margin: 0 auto;
