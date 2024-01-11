@@ -1,5 +1,43 @@
 
-
+.Section_top{
+    width: 50%;
+    margin: 0 auto;
+    overflow: hidden;
+    height: 40vh;
+    background-image: url(/images/photo_2024-01-10_09-41-02.jpg) !important;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size:cover;
+    text-align: center;
+    justify-content: center;
+    animation: change 10s infinite ease-in-out !important;
+}
+@keyframes change{
+    0%
+    {
+        background-image: url(/images/photo_2024-01-10_17-34-33.jpg) !important;
+    }
+    20%
+    {
+        background-image: url(/images/photo_2024-01-10_09-41-02.jpg) !important;
+    }
+    40%
+    {
+        background-image: url(/images/photo_2024-01-10_17-34-33.jpg) !important;
+    }
+    60%
+    {
+        background-image: url(/images/photo_2024-01-10_09-41-02.jpg) !important;
+    }
+    80%
+    {
+        background-image: url(/images/photo_2024-01-10_09-41-02.jpg) !important;
+    }
+    100%
+    {
+        background-image: url(/images/photo_2024-01-10_09-41-02.jpg) !important;
+    }
+}
 #navi-dash {
     display: flex;
     justify-content: space-between;
