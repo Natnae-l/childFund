@@ -135,7 +135,7 @@ nav > ul> li{
 }
 .menu {
   width: 50px !important;
-  background-color: white;
+  /* background-color: white; */
   border-radius: .3rem;
   align-self: flex-end;
   margin-right: 2rem;
@@ -143,6 +143,12 @@ nav > ul> li{
   top: 2rem;
   right: -10px;
   display: none;
+}
+.video{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-block: 2rem;
 }
 .show {
   display: flex !important;
@@ -165,8 +171,18 @@ nav > ul> li{
     align-items: flex-start;
     flex-wrap: nowrap;
   }
+  #nav-u p{
+    font-size: 1.8rem !important;
+  }
+ #nav-ul {
+    display: none !important;
+  }
   nav, .nav {
     display: none;
+  }
+  #promise {
+    align-items: center !important;
+    justify-content: center !important;
   }
   .staff {
     grid-template-columns: repeat(3, 1fr) !important;
@@ -217,16 +233,6 @@ nav > ul> li{
   .menu-lii {
     display: none;
   }
-}
-
-@media(max-width: 766px) {
-  .menu-lii {
-    width: 100%;
-  }
-  #header { 
-    font-size: 20px;
-    flex-direction: row !important;
-  }
   .second-nav {
     position:static;
     z-index: 10 !important;
@@ -241,10 +247,21 @@ nav > ul> li{
     width: 100% !important;
     grid-column: 1 / -1 !important;
     display: flex !important;
-    /* display: flex; */
+    /* display: flex;  */
     gap: 2rem;
     min-height: 60vh;
   }
+}
+
+@media(max-width: 766px) {
+  .menu-lii {
+    width: 100%;
+  }
+  #header { 
+    font-size: 20px;
+    flex-direction: row !important;
+  }
+ 
   .co {
     width: 100% !important;
   } 
@@ -313,6 +330,15 @@ nav > ul> li{
     width: 100%;
     justify-content: flex-start;
   }
+  .mission {
+    padding: 2.5rem 1rem !important;
+  }
+  .mission h3 {
+    font-size: .8rem !important;
+  }
+  #childern {
+    font-family: Poppins, sans-serif !important;
+}
   #header {
     flex-wrap: wrap;
   }
@@ -321,6 +347,12 @@ nav > ul> li{
   }
  .login-card, .signup-form input {
     width: 95% !important;
+  }
+  #nav-u p {
+    font-size: 1.1rem !important;
+  }
+  .menu {
+    width: 25px !important;
   }
   
   .form-sub {

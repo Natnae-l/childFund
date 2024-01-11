@@ -6,9 +6,12 @@ const logger = require('morgan');
 const flash = require('connect-flash')
 const passport = require('passport')
 const session = require('express-session');
+const rateLimit = require('express-rate-limit')
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
+
+
 
 // dotenv configuration
 require('dotenv').config()
@@ -16,6 +19,16 @@ require('dotenv').config()
 // initialized app
 const app = express();
 
+const limiter = rateLimit({
+	windowMs: 9 * 1000,
+	limit: 100, // Limit each IP to 100 requests per `window` (here, per 15 minutes).
+	standardHeaders: 'draft-7', // draft-6: `RateLimit-*` headers; draft-7: combined `RateLimit` header
+	legacyHeaders: false, // Disable the `X-RateLimit-*` headers.
+	// store: ... , // Use an external store for consistency across multiple server instances.
+})
+
+// Apply the rate limiting middleware to all requests.
+app.use(limiter)
 // connect DB
 require('./config/databaseConfig')()
 app.listen(process.env.PORT, () => console.log(`app listening on port: ${process.env.PORT}`))

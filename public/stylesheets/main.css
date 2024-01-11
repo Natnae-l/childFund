@@ -1,3 +1,28 @@
+
+
+#navi-dash {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    font-family: Lato;
+    padding-inline: 1rem;
+    z-index: 1000;
+}
+#nav-u {
+    display: flex;
+    align-items: center;
+    padding-block-start: 25px;
+    font-size: 1.2rem;
+}
+#nav-ul {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+    font-family: Poppins, sans-serif;
+    font-size: 1.1rem;
+}
 .mission {
     display: flex;
     align-items: center;
@@ -13,11 +38,12 @@
     font-size: 1.8rem;
     justify-content: center;
     text-align: center;
-
+    font-weight: 500;
 }
 .mission p {
     font-family: Poppins, sans-serif;
-    font-size: 1rem;
+    font-size: 1.1rem;
+
 }
 #works  h3 {
     font-size: 1.8rem;
@@ -41,6 +67,8 @@
 }
 .project-name {
     font-size: 1.4rem;
+    font-weight: 500 !important;
+    font-family: Lato, sans-serif !important;
 }
 .donate {
     text-decoration: none;
