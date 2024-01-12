@@ -5,8 +5,9 @@
 }
 .ads {
     display: flex;
-    gap: 15px;
+    gap: 3.7rem;
     flex-wrap: wrap;
+    padding-block-start: 2rem;
 }
 .ads a {
     text-decoration: none;
