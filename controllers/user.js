@@ -153,7 +153,7 @@ const mailOptions = {
 getMessage = async (req, res, next) => {
   try {
      let messages = await Message.find({}).sort({createdAt: -1})
-  messages = messages.map(item => {
+    messages = messages.map(item => {
     return (
       {
         message: item.message,
