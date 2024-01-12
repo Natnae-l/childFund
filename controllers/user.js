@@ -151,7 +151,8 @@ const mailOptions = {
   res.redirect('/dashboard')
 }
 getMessage = async (req, res, next) => {
-  let messages = await Message.find({}).sort({createdAt: -1})
+  try {
+     let messages = await Message.find({}).sort({createdAt: -1})
   messages = messages.map(item => {
     return (
       {
@@ -161,6 +162,10 @@ getMessage = async (req, res, next) => {
     )
   })
   res.render('dashboard/dashboard', { messages })
+  } catch (err) {
+    res.send('please check your internet connection')
+  }
+ 
 }
 module.exports = {
     addUser, logOut, updateUser, sendMessage,getMessage, alertEmail
