@@ -6,6 +6,7 @@
 .ads {
     display: flex;
     gap: 15px;
+    flex-wrap: wrap;
 }
 .ads a {
     text-decoration: none;

@@ -202,7 +202,7 @@ nav > ul> li{
     margin-block-end: 10px;
   }
   .project-wrapper {
-    flex-direction: column-reverse;
+    flex-direction: column-reverse !important;
   }
   .menu {
     display: block !important;
