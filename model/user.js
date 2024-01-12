@@ -7,7 +7,8 @@ const userSchema = new Schema({
     email: {required: true, type: String},
     password: {required: true, type: String, minLength: 8},
     createdAt: {default: Date.now,  type: Date},
-    isAdmin: {default: false, type: Boolean}
+    isAdmin: {default: false, type: Boolean},
+    donationPlan: {type: String}
 })
 
 const User = mongoose.model('User', userSchema);

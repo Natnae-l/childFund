@@ -6,9 +6,6 @@ const authenticate = require('../config/auth')
 
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
 router.get('/dashboard', authenticate.ensureAuthenticated, userController.getMessage)
 router.get('/dashboard/profile', authenticate.ensureAuthenticated, async(req, res, next) => {
   res.render('dashboard/profile')
@@ -21,7 +18,7 @@ router.get('/sendmessage', authenticate.ensureAuthenticated, (req, res, next) =>
 })
 router.post('/update/user',authenticate.ensureAuthenticated, userController.updateUser)
 router.post('/signup', userController.addUser)
-
+router.post('/donate', authenticate.ensureAuthenticated, userController.donatePlan)
 router.post('/login', passport.authenticate('local', {
   successRedirect: '/dashboard',
   failureRedirect: '/login'

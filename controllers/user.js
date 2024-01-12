@@ -3,6 +3,16 @@ const Message = require('../model/messageModel');
 const bcrypt = require('bcryptjs')
 const moment = require('moment')
 
+donatePlan = async (req, res, next) => {
+ try {
+  let {donationPlan} = req.body;
+    let user = await User.findById({_id: req.user._id});
+    if (user) await User.findByIdAndUpdate({_id: req.user._id}, {donationPlan: donationPlan});
+    res.redirect('/dashboard/donate')
+ } catch (error) {
+  console.log(error)
+ }
+}
 
 addUser = async(req, res, next) => {
     let newUser = {
@@ -118,7 +128,6 @@ sendMessage = async (req, res, next) => {
 }
 alertEmail = async(req, res, next) => {
   const email = (await User.find({}, 'email')).map(item => item.email);
-  console.log(email)
   const nodemailer = require("nodemailer");
 
 const transporter = nodemailer.createTransport({
@@ -168,5 +177,5 @@ getMessage = async (req, res, next) => {
  
 }
 module.exports = {
-    addUser, logOut, updateUser, sendMessage,getMessage, alertEmail
+    addUser, logOut, updateUser, sendMessage,getMessage, alertEmail, donatePlan
 }
