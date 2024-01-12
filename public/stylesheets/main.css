@@ -5,7 +5,7 @@
 }
 .ads {
     display: flex;
-    gap: 3.7rem;
+    gap: 1.6rem;
     flex-wrap: wrap;
     padding-block-start: 2rem;
 }
@@ -32,9 +32,11 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size:cover;
-    text-align: center;
-    justify-content: center;
-    animation: change 10s infinite !important;
+    color: white;
+    padding: 2rem;
+    /* text-align: center; */
+    /* justify-content: center; */
+    /* animation: change 10s infinite !important; */
     border-radius: .4rem;
 }
 @keyframes change{
