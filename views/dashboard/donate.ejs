@@ -6,9 +6,9 @@
         <%- include('./partials/nav'); %>
         <section class="third-nav donater"> 
             <% if (locals.currentUser.donationPlan){%>
-                <p>Your donation plan is <span style="font-family: Poppins; color: var(--green);"><%=locals.currentUser.donationPlan%></span></p>
+                <p>Your donation plan is <span style="font-family: Poppins; color: var(--green); "><%=locals.currentUser.donationPlan%></span></p>
                 <%} %>
-            <form action="/donate" method="post" class="donate-form">
+            <form action="/donate" method="post" class="donate-form" style="margin-block-start: -4rem;">
                 <h3>Welcome to Donation center</h3>
                 <div>
                     <label for="donate">please select your plan</label>
@@ -22,7 +22,7 @@
                 <button type="submit">Confirm</button>
                 
             </form>
-            <section class="donate-p2">
+            <section class="donate-p2" style="margin-block-start: -3rem;">
                 <h2>For donation:</h2>
                 <ul>
                     <li>Nib Bank: <span>7000050152907</span></li>

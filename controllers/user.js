@@ -10,11 +10,12 @@ donatePlan = async (req, res, next) => {
     if (user) await User.findByIdAndUpdate({_id: req.user._id}, {donationPlan: donationPlan});
     res.redirect('/dashboard/donate')
  } catch (error) {
-  console.log(error)
+  next(error)
  }
 }
 
 addUser = async(req, res, next) => {
+  try {
     let newUser = {
         firstName: req.body.firstName, lastName: req.body.lastName,
         password: req.body.password1, email: req.body.email
@@ -29,7 +30,7 @@ addUser = async(req, res, next) => {
           errors.push({ msg: 'Passwords do not match' });
         }
       
-        if (req.body.password1 < 8 || req.body.password2 < 8) {
+        if (req.body.password1.length < 8 || req.body.password2.length < 8) {
           errors.push({ msg: 'Password must be at least 8 characters' });
         }
       
@@ -64,16 +65,26 @@ addUser = async(req, res, next) => {
             }
           });
         }
+  } catch (error) {
+    next(error)
+  }
+    
 }
 logOut = async(req, res, next) => {
-  req.logout(function(err) {
+  try {
+    req.logout(function(err) {
       if (err) { return next(err); }
       res.redirect('/login');
     });
+  } catch (error) {
+    next(error)
+  }
+  
 }
 
 updateUser = async (req, res, next) => {
-  let user = await User.findOne({_id: req.user._id})
+  try {
+    let user = await User.findOne({_id: req.user._id})
   console.log(req.user._id)
   
   if (user){
@@ -112,9 +123,14 @@ updateUser = async (req, res, next) => {
       }
     });
   }
+  } catch (error) {
+    next(error)
+  }
+  
 }
 sendMessage = async (req, res, next) => {
-  let newMessage = {
+  try {
+    let newMessage = {
     message: req.body.message,
     user: req.user._id,
     createdAt: Date.now()
@@ -125,9 +141,14 @@ sendMessage = async (req, res, next) => {
   } else {
     res.render('dashboard/sendMessage')
   }
+  } catch (error) {
+    next(error)
+  }
+  
 }
 alertEmail = async(req, res, next) => {
-  const email = (await User.find({}, 'email')).map(item => item.email);
+  try {
+    const email = (await User.find({}, 'email')).map(item => item.email);
   const nodemailer = require("nodemailer");
 
 const transporter = nodemailer.createTransport({
@@ -158,6 +179,9 @@ const mailOptions = {
    }
 });
   res.redirect('/dashboard')
+  } catch (error) {
+    next(error)
+  }
 }
 getMessage = async (req, res, next) => {
   try {
@@ -171,8 +195,8 @@ getMessage = async (req, res, next) => {
     )
   })
   res.render('dashboard/dashboard', { messages })
-  } catch (err) {
-    res.send('please check your internet connection')
+  } catch (error) {
+    next(error)
   }
  
 }

@@ -30,7 +30,7 @@ const limiter = rateLimit({
 // Apply the rate limiting middleware to all requests.
 app.use(limiter)
 // connect DB
-require('./config/databaseConfig')()
+app.use(require('./config/databaseConfig'))
 app.listen(process.env.PORT, () => console.log(`app listening on port: ${process.env.PORT}`))
 
 //connect passport
@@ -81,11 +81,6 @@ app.use((req, res, next) => {
 // routes 
 app.use('/', indexRouter);
 app.use('/', usersRouter);
-
-// catch 404 and forward to error handler
-app.use(function(req, res, next) {
-  next(createError(404));
-});
 
 // error handler
 app.use(function(err, req, res, next) {
