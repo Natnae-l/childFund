@@ -1,7 +1,8 @@
 const User = require('../model/user');
 const Message = require('../model/messageModel');
 const bcrypt = require('bcryptjs')
-const moment = require('moment')
+const moment = require('moment');
+const { trusted } = require('mongoose');
 
 donatePlan = async (req, res, next) => {
  try {
@@ -36,13 +37,13 @@ addUser = async(req, res, next) => {
       
         if (errors.length > 0) {
           res.render('front-page/sign-up', {
-            errors, title: 'express'
+            errors
           });
         } else {
           User.findOne({ email: newUser.email }).then(user => {
             if (user) {
               errors.push({ msg: 'Email already exists' });
-              res.render('front-page/login', {errors, title: 'express'});
+              res.render('front-page/login', {errors});
             } else {
                 let newUser = {
                     firstName: req.body.firstName, lastName: req.body.lastName, email: req.body.email, password: req.body.password1
@@ -57,7 +58,7 @@ addUser = async(req, res, next) => {
                     .save()
                     .then(user => {
                         console.log('new user saved')
-                      res.render('front-page/login', {title: 'express', errors: {}});
+                      res.render('front-page/login', {errors: {success: req.flash('user', true)}});
                     })
                     .catch(err => console.log(err));
                 });

@@ -3,8 +3,8 @@ const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const flash = require('connect-flash')
-const passport = require('passport')
+const flash = require('connect-flash');
+const passport = require('passport');
 const session = require('express-session');
 const rateLimit = require('express-rate-limit')
 
@@ -63,18 +63,12 @@ app.use(passport.session());
 // Connect flash
 app.use(flash());
 
-// Global variables
-app.use(function(req, res, next) {
-  res.locals.success_msg = req.flash('success_msg');
-  res.locals.error_msg = req.flash('error_msg');
-  res.locals.error = req.flash('error');
-  next();
-});
-
 // global variable
 app.use((req, res, next) => {
   res.locals.currentUser = req.user;
-  res.locals.title = 'VCO charity'
+  res.locals.title = 'VCO charity';
+  res.locals.success = req.flash('user');
+  res.locals.error_msg = req.flash('error_msg');
   next();
 });
 
@@ -85,6 +79,7 @@ app.use('/', usersRouter);
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
+  console.log(err)
   res.render('404')  
 });
 

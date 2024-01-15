@@ -10,12 +10,18 @@
             <h3>Login</h3>
             <% if (typeof(errors) != undefined && errors.length > 0) {%>
                 <%errors.forEach(item => {%>
-                    <div class="error" onclick="this.hidden=true" style="width: 40%; display: flex; justify-content: space-between; background-color: rgb(253, 194, 194); padding: 0.6rem 1rem; border-radius: 1rem;">
-                        <p><%= item.msg %></p>
-                        <p >X</p>
+                    <div class="error" onclick="this.hidden=true" style="width: 100%; display: flex; justify-content: space-between; margin-block-end: 10px; background-color: rgb(253, 194, 194); padding: 0.4rem 1rem; border-radius: 1rem; align-items: center;">
+                        <p style="margin-block: 0;"><%= item.msg %></p>
+                        <img src="/images/del.png" alt="delete" style="height: 28px;">
                       </div>
                     <%})%>
                 <%}%>
+            <% if (errors.success) {%>
+                        <div onclick="this.hidden=true" style="width: 100%; display: flex; justify-content: space-between; color: white; margin-block-end: 10px; background-color: rgb(88, 193, 132); padding: 0.4rem 1rem; border-radius: 1rem; align-items: center;">
+                            <p style="margin-block: 0;">Account created successfully!</p>
+                            <img src="/images/del.png" alt="delete" style="height: 28px;">
+                          </div>
+                    <%}%>
             <form action="/login" method="post">
                 <input type="text" name="email" placeholder="Username" required>
                 <input type="password" name="password" placeholder="Password" required>

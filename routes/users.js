@@ -19,27 +19,28 @@ router.get('/sendmessage', authenticate.ensureAuthenticated, (req, res, next) =>
 router.post('/update/user',authenticate.ensureAuthenticated, userController.updateUser)
 router.post('/signup', userController.addUser)
 router.post('/donate', authenticate.ensureAuthenticated, userController.donatePlan)
-// router.post('/login', passport.authenticate('local', {
-//   successRedirect: '/dashboard',
-//   failureRedirect: '/login'
-// }));
-router.post('/login', function(req, res, next) {
-  passport.authenticate('local', function(err, user, info) {
+router.post('/login', passport.authenticate('local', {successRedirect: '/dashboard', failureRedirect: '/login', failureFlash: true}), (err, req, res, next) => {
     if (err) {
-      return next(err); // will generate a 500 error
+      next(err)
     }
-    // Generate a JSON response reflecting authentication status
-    if (! user) {
-       res.redirect('/login')
-    }
-    req.login(user, function(err){
-      if(err){
-        return next(err);
-      }
-      res.redirect('/dashboard')      
-    });
-  })(req, res, next);
 });
+// router.post('/login', function(req, res, next) {
+//   passport.authenticate('local', function(err, user, info) {
+//     if (err) {
+//       return next(err); // will generate a 500 error
+//     }
+//     // Generate a JSON response reflecting authentication status
+//     if (! user) {
+//        res.redirect('/login')
+//     }
+//     req.login(user, function(err){
+//       if(err){
+//         return next(err);
+//       }
+//       res.redirect('/dashboard')      
+//     });
+//   })(req, res, next);
+// });
 router.post('/logout',authenticate.ensureAuthenticated, userController.logOut) 
 // message controller
 router.post('/sendmessage',authenticate.ensureAuthenticated, userController.sendMessage,userController.alertEmail)
