@@ -17,8 +17,4 @@
     <li>Rate Limiter: Safeguarding the application from abuse and potential security threats by enforcing rate limits for incoming requests.</li>
 </ul>
 <h4>Impact:</h4>
-"Visionary Education Hub" serves as a pivotal tool in promoting the inclusivity and educational development of visually impaired children. By providing a platform for self-expression and interaction, coupled with a secure donation channel, it enables the NGO to further its cause while uplifting and empowering the visually impaired community.
-
-Your project stands as a beacon of hope and progress, showcasing the positive impact of technology in fostering an inclusive society. Keep up the amazing work, and may your efforts continue to brighten the lives of many!
-
-If you need any further assistance in refining this project description or any other aspect of your project, feel free to ask – I'm here to help!
+"VCO" serves as a pivotal tool in promoting the inclusivity and educational development of visually impaired children. By providing a platform for self-expression and interaction, coupled with a secure donation channel, it enables the NGO to further its cause while uplifting and empowering the visually impaired community.
