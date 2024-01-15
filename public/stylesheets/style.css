@@ -281,7 +281,7 @@ nav > ul> li{
     grid-template-columns: repeat(2, 1fr) !important;
     padding: 1rem !important;
   }
-  .login-card, .signup-form input {
+  .login-card, .signup-form input, #msg {
     width: 65% !important;
   }
   
@@ -321,7 +321,7 @@ nav > ul> li{
  .project-wrapper {
     width: 95% !important;
   } 
-  .login-card,.signup-form input {
+  .login-card,.signup-form input, #msg {
     width: 85% !important;
   }
 }
@@ -345,7 +345,7 @@ nav > ul> li{
   nav > ul {
     flex-direction: row;
   }
- .login-card, .signup-form input {
+ .login-card, .signup-form input, #msg {
     width: 95% !important;
   }
   #nav-u p {

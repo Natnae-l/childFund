@@ -67,8 +67,8 @@ app.use(flash());
 app.use((req, res, next) => {
   res.locals.currentUser = req.user;
   res.locals.title = 'VCO charity';
-  res.locals.success = req.flash('user');
-  res.locals.error_msg = req.flash('error_msg');
+  res.locals.success = req.flash('user') ;
+  res.locals.error_msg = req.flash('error') || '';
   next();
 });
 
