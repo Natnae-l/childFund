@@ -21,6 +21,7 @@ router.get('/sendmessage', authenticate.ensureAuthenticated, (req, res, next) =>
 })
 router.post('/update/user',authenticate.ensureAuthenticated, userController.updateUser)
 router.post('/signup', userController.addUser)
+router.post('/subscribe', userController.addSub)
 router.post('/donate', authenticate.ensureAuthenticated, userController.donatePlan)
 router.post('/login', passport.authenticate('local', {successRedirect: '/dashboard', failureRedirect: '/login', failureFlash: true}), (err, req, res, next) => {
     if (err) {

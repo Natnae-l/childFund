@@ -1,4 +1,5 @@
 const User = require('../model/user');
+const Subscriber = require('../model/subModel');
 const Message = require('../model/messageModel');
 const bcrypt = require('bcryptjs')
 const moment = require('moment');
@@ -70,6 +71,15 @@ addUser = async(req, res, next) => {
     next(error)
   }
     
+}
+addSub = async (req, res, next) => {
+    try {
+      const sub = new Subscriber({email: req.body.email})
+      await sub.save()
+      console.log('subscriber added')
+    } catch (error) {
+      next(err)
+    }
 }
 logOut = async(req, res, next) => {
   try {
@@ -202,5 +212,5 @@ getMessage = async (req, res, next) => {
  
 }
 module.exports = {
-    addUser, logOut, updateUser, sendMessage,getMessage, alertEmail, donatePlan
+    addUser, logOut, updateUser, sendMessage,getMessage, alertEmail, donatePlan, addSub
 }
