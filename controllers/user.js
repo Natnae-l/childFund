@@ -208,7 +208,8 @@ getMessage = async (req, res, next) => {
     return (
       {
         message: item.message,
-        createdAt: moment(item.createdAt).format('DD MMMM YYYY')
+        createdAt: moment(item.createdAt).format('DD MMMM YYYY'),
+        _id: item._id
       }
     )
   })

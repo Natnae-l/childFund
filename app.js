@@ -7,6 +7,7 @@ const flash = require('connect-flash');
 const passport = require('passport');
 const session = require('express-session');
 const rateLimit = require('express-rate-limit')
+const mongoose = require('mongoose')
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -30,11 +31,11 @@ const limiter = rateLimit({
 // Apply the rate limiting middleware to all requests.
 app.use(limiter)
 // connect DB
-require('./config/databaseConfig')()
+mongoose.connect(process.env.mongoDB)
   .then(() => {
     app.listen(process.env.PORT, () => console.log(`app listening on port: ${process.env.PORT}`))
   })
-  .catch(e => next(err))
+  .catch(e => console.log(e.message))
 
 
 //connect passport

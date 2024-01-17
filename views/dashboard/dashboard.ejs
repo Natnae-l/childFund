@@ -14,6 +14,9 @@
                     <ul class="message-board">
                         <li><%= item.message%></li>
                         <li class="m-date"><%=item.createdAt%></li>
+                        <% if (locals.currentUser.isAdmin){%>
+                            <li><a href="/delete-message/<%=item._id%>"><img src="/images/delete.png" alt=""></a></li>
+                        <%}%>
                     </ul>
                     <%})%>
                 
