@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%- include('../partials/head'); %>
+<body>
+    <%- include('./partials/header') %>
+    <section class="dashboard">
+        <%- include('./partials/nav') %>
+        <section class="third-nav dash-message">
+            <h3>Send News and Updates</h3>
+            <h5>Send Message from VCO to all subscribers</h5>
+            
+                <form action="/sendUpdate" class="message-board form" method="post">
+                    <textarea name="message" id="" cols='40' rows="8"></textarea>
+                    <button type="submit">send</button>
+                </ul>
+        </section>
+    </section>
+       <%- include('../partials/footer') %>
+</body>
+</html>

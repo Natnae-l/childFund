@@ -8,6 +8,7 @@
     gap: 1.6rem;
     flex-wrap: wrap;
     padding-block-start: 2rem;
+    align-items: center;
 }
 .ads a {
     text-decoration: none;
@@ -327,8 +328,8 @@
 
 /* staff */
 .staff {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    display: flex;
+    justify-content: space-around;
     padding: 1rem 2rem;
     gap: 1rem;
 }

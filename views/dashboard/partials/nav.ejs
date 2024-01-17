@@ -3,6 +3,7 @@
         <ul>
         <% if (locals.currentUser.isAdmin){%>
             <li><a href="/sendmessage">Send Message</a></li>
+            <li><a href="/dashboard/sendUpdate">Send News</a></li>
             <%} else {%> 
            <li><a href="/dashboard">Message</a></li>
            <%}%>

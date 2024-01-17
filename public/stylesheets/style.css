@@ -182,7 +182,7 @@ nav > ul> li{
   }
   #promise {
     align-items: center !important;
-    justify-content: center !important;
+    /* justify-content: center !important; */
   }
   .staff {
     grid-template-columns: repeat(3, 1fr) !important;
@@ -222,6 +222,10 @@ nav > ul> li{
     padding-inline-start: 0;
     gap: 5px;
   }
+  .ads {
+    align-items: center !important;
+  }
+  
 }
 .grid-img {
   display: grid;
@@ -251,12 +255,16 @@ nav > ul> li{
     gap: 2rem;
     min-height: 60vh;
   }
+  footer > p{
+    width: 90% !important;
+  }
 }
 
 @media(max-width: 766px) {
   .menu-lii {
     width: 100%;
   }
+
   #header { 
     font-size: 20px;
     flex-direction: row !important;
@@ -315,6 +323,10 @@ nav > ul> li{
     width: 100% !important;
     font-size: 1rem !important;
   }
+  footer > p{
+    width: 100% !important;
+    padding: 20px !important;
+  }
   
 }
 @media (max-width: 450px) {
@@ -323,6 +335,17 @@ nav > ul> li{
   } 
   .login-card,.signup-form input, #msg {
     width: 85% !important;
+  }
+  .ads {
+    align-items: flex-start !important;
+    width: 100vw;
+    margin-left: -5rem !important;
+  }
+  header {
+    width: 100vw !important;
+  }
+  .ads img {
+    width: 100vw !important;
   }
 }
 @media(max-width: 403px) {
