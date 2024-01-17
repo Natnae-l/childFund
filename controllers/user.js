@@ -77,6 +77,7 @@ addSub = async (req, res, next) => {
       const sub = new Subscriber({email: req.body.email})
       await sub.save()
       console.log('subscriber added')
+      res.redirect('/');
     } catch (error) {
       next(err)
     }
