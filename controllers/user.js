@@ -74,12 +74,18 @@ addUser = async(req, res, next) => {
 }
 addSub = async (req, res, next) => {
     try {
-      const sub = new Subscriber({email: req.body.email})
-      await sub.save()
-      console.log('subscriber added')
-      res.redirect('/');
+      let subExist = await Subscriber.findOne({email: req.body.email})
+      if (!subExist){
+        const sub = new Subscriber({email: req.body.email})
+        await sub.save()
+        console.log('subscriber added')
+        res.redirect('/');
+        return;
+      }
+      res.redirect('/')
+      
     } catch (error) {
-      next(err)
+      next(error)
     }
 }
 logOut = async(req, res, next) => {

@@ -30,8 +30,12 @@ const limiter = rateLimit({
 // Apply the rate limiting middleware to all requests.
 app.use(limiter)
 // connect DB
-app.use(require('./config/databaseConfig'))
-app.listen(process.env.PORT, () => console.log(`app listening on port: ${process.env.PORT}`))
+require('./config/databaseConfig')()
+  .then(() => {
+    app.listen(process.env.PORT, () => console.log(`app listening on port: ${process.env.PORT}`))
+  })
+  .catch(e => next(err))
+
 
 //connect passport
 require('./config/passport')(passport)

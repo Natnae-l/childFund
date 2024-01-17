@@ -1,5 +1,5 @@
     <ul class="second-nav" style="width: 200px;">
-        <a href="/dashboard">dashboard</a>
+        <a href="/dashboard" style="margin-bottom: 1.99rem;">dashboard</a>
         <ul>
         <% if (locals.currentUser.isAdmin){%>
             <li><a href="/sendmessage">Send Message</a></li>
@@ -11,7 +11,7 @@
             <li><a href="/dashboard/donate">Donate</a></li> 
         </ul>
 
-    <form action="/logout" method="post">
+    <form action="/logout" method="post" style="margin-top: 1.99rem;">
         <button>Logout</button>
     </form>
     </ul>
