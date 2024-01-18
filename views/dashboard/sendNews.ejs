@@ -9,8 +9,10 @@
             <h3>Send News and Updates</h3>
             <h5>Send Message from VCO to all subscribers</h5>
             
-                <form action="/sendupdate" class="message-board form" method="post">
-                    <textarea name="message" id="" cols='40' rows="8"></textarea>
+                <form action="/sendupdate" class="message-board form" style="display: flex;" method="post" enctype="multipart/form-data">
+                    <textarea name="text" id="" cols='30' rows="6"></textarea>
+                    <input type="file" name="image" accept="image/*" id="" required>
+                    <input type="text" placeholder="enter link" name="link" required>
                     <button type="submit">send</button>
                 </ul>
         </section>

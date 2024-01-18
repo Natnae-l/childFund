@@ -4,6 +4,8 @@ const Message = require('../model/messageModel');
 const bcrypt = require('bcryptjs')
 const moment = require('moment');
 const { trusted } = require('mongoose');
+const fs = require('fs')
+const News = require('../model/newsModel')
 
 donatePlan = async (req, res, next) => {
  try {
@@ -221,38 +223,25 @@ getMessage = async (req, res, next) => {
 }
 
 sendNews = async (req, res, next) => {
-  try {
-      const email = (await Subscriber.find({}, 'email')).map(item => item.email);
-      const nodemailer = require("nodemailer");
-
-      const transporter = nodemailer.createTransport({
-         service: "gmail",
-         auth: {
-            user: process.env.email,
-            pass: process.env.password,
-            port: 465,
-            secure: true,
-         }
-  });
-
-  const mailOptions = {
-     from: "natnaelmverse1@gmail.com",
-     to: email,
-     subject: "VCO charity Org.",
-     html: `<p>${req.body.message}</p>`
-  };
-
-   transporter.sendMail(mailOptions, function(error, info){
-      if(error){
-         console.log(error);
-      }else{
-        console.log("Email sent: " + info.response);
-      }
-  });
-    res.redirect('/dashboard')
-    } catch (error) {
-      next(error)
-    }  
+  const image = req.body.image
+  // reading file data
+  const fileData = fs.readFile(image.path)
+  
+  // converting to binary
+  const binary = Buffer.from(fileData)
+  const newNews = new News({
+    image: binary,
+    link: req.body.link,
+    text: req.body.text
+  })
+  console.log(newNews)
+         await newNews.save()
+  
+  // saving in database
+  
+  
+  // sending response back to client
+  res.send("Done") 
 }
 deleteMessage = async (req, res, next) => {
   try {

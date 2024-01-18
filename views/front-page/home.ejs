@@ -54,6 +54,7 @@
         </section>            
     </section>
     <section class="m-article"data-aos="fade-up" data-aos-duration="1500">
+      
       <section class="article">
         <section>
          <p style="font-size: 1.02rem;">OUR RECENT NEWS</p> 
@@ -61,33 +62,21 @@
         </section>
         <a href="#article" class="donate" >view here<img src="/images/down-arrow.png" alt=""></a>
       </section>
-      <section class="ads">
-        <a href="https://www.youtube.com/watch?v=MH5MAvRZnAY&t=987s" target="_blank">
-          <section class="member">
-            <img src="/images/bl5.png" alt="" style="width: 286px; height: 180px;">
-            <a href="" style="color: rgb(58, 54, 54); font-weight: 500;">They wanted to go to school when they were two years old... I left what I learned(on EBS)</a>
-        </section>
-        </a>
-        <a href="https://amharic.voanews.com/a/7409211.html" target="_blank">
-          <section class="member">
-            <img src="/images/bl1.png" alt="" style="width: 286px; height: 180px;">
-            <a href="https://amharic.voanews.com/a/7409211.html" style="color: rgb(58, 54, 54); font-weight: 500;">The first Kindergarten for the blind who gave birth to the problem in Ethiopia needs expansion support</a>
-        </section>
-        </a>
-        <a href="https://www.youtube.com/watch?v=o4DLdP82caQ" target="_blank">
-          <section class="member">
-            <img src="/images/bl2.png" alt="" style="width: 286px; height: 180px;">
-            <a href="https://www.youtube.com/watch?v=o4DLdP82caQ" style="color: black; font-weight: 500;">I woke up when he got home! Mothers who are as pure as gold!</a>
-        </section>
-        </a>
-        <a href="https://www.mixcloud.com/ShegerFM/gfsdg/" target="_blank">
-          <section class="member">
-            <img src="/images/bl3.png" alt="" style="width: 286px; height: 180px;">
-            <a href="https://www.mixcloud.com/ShegerFM/gfsdg/" style="color: black; font-weight: 500;">An organization established for students of blind children has said that he is going to quit his job</a>
-        </section>
-        </a>
-      </section>
       
+      <section class="ads">
+        
+        <%if (news.length > 0){%>
+          <%news.forEach(item => {%>
+            <a href="<%=item.link%>" target="_blank">
+              <section class="member">
+                <img src="<%=item.image%>" alt="" style="width: 286px; height: 180px;">
+                <a href="<%=item.link%>" style="color: rgb(58, 54, 54); font-weight: 500;"><%=item.text%></a>
+            </section>
+          <%})%>
+        <%}%>
+        </section>
+        </a>
+      </section>  
     </section>
   </section>
   
