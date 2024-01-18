@@ -219,6 +219,43 @@ getMessage = async (req, res, next) => {
   }
  
 }
+
+sendNews = async (req, res, next) => {
+  try {
+      const email = (await Subscriber.find({}, 'email')).map(item => item.email);
+      const nodemailer = require("nodemailer");
+
+      const transporter = nodemailer.createTransport({
+         service: "gmail",
+         auth: {
+            user: process.env.email,
+            pass: process.env.password,
+            port: 465,
+            secure: true,
+         }
+  });
+
+  const mailOptions = {
+     from: "natnaelmverse1@gmail.com",
+     to: email,
+     subject: "VCO charity Org.",
+     html: `<p>${req.body.message}</p>`
+  };
+
+   transporter.sendMail(mailOptions, function(error, info){
+      if(error){
+         console.log(error);
+      }else{
+        console.log("Email sent: " + info.response);
+      }
+  });
+    res.redirect('/dashboard')
+    } catch (error) {
+      next(error)
+    }  
+}
+
+
 module.exports = {
-    addUser, logOut, updateUser, sendMessage,getMessage, alertEmail, donatePlan, addSub
+    addUser, logOut, updateUser, sendMessage,getMessage, alertEmail, donatePlan, addSub, sendNews
 }
