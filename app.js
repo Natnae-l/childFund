@@ -8,6 +8,7 @@ const passport = require('passport');
 const session = require('express-session');
 const rateLimit = require('express-rate-limit')
 const mongoose = require('mongoose')
+const methodOverride = require('method-override')
 
 const indexRouter = require('./routes/index');
 const usersRouter = require('./routes/users');
@@ -51,6 +52,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(methodOverride('_method'))
 
 // Express session
 app.use(

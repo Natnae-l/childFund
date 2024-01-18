@@ -48,6 +48,7 @@ router.post('/login', passport.authenticate('local', {successRedirect: '/dashboa
 router.post('/logout',authenticate.ensureAuthenticated, userController.logOut) 
 // message controller
 router.post('/sendupdate',authenticate.ensureAuthenticated, userController.sendNews)
+router.delete('/deletemessage/:_id',authenticate.ensureAuthenticated, userController.deleteMessage)
 router.post('/sendmessage',authenticate.ensureAuthenticated, userController.alertEmail)
 
 module.exports = router;

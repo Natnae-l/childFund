@@ -9,8 +9,3 @@ Array.from(document.querySelectorAll('.link')).forEach(item => {
     document.querySelector(".menu-lii").classList.remove("show");
 })
 })
-Array.from(document.querySelectorAll('.removeee')).forEach(item => {
-    item.addEventListener('click', () => {
-    alert(this.id)
-})
-})

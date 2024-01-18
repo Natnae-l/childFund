@@ -254,8 +254,24 @@ sendNews = async (req, res, next) => {
       next(error)
     }  
 }
+deleteMessage = async (req, res, next) => {
+  try {
+    if (req.params._id){
+    let deleted = await Message.findByIdAndDelete({_id: req.params._id});
+    if (deleted){
+      res.redirect('/dashboard')
+      return
+    }
+    res.redirect('/dashboard')
+  }
+  res.redirect('/login')
+  } catch (error) {
+    next(error)
+  }
+  
+}
 
 
 module.exports = {
-    addUser, logOut, updateUser, sendMessage,getMessage, alertEmail, donatePlan, addSub, sendNews
+    addUser, logOut, updateUser, sendMessage,getMessage, alertEmail, donatePlan, addSub, sendNews, deleteMessage
 }

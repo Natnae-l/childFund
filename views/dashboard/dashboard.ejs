@@ -16,7 +16,9 @@
                         <div style="display: flex; flex-direction: column; align-items: center; gap: 1rem;">
                            <li class="m-date"><%=item.createdAt%></li>
                            <% if (locals.currentUser.isAdmin){%>
-                              <img class="removeee" id="<%=item._id%>" src="/images/delete.png" alt="">
+                              <form action="/deletemessage/<%=item._id%>?_method=DELETE" method="post">
+                                  <button type="submit" style="color: var(--green); border-color: var(--green); background-color: aliceblue;">Delete</button>
+                             </form>
                             <%}%>  
                         </div>
                        
