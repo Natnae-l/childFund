@@ -180,6 +180,9 @@ nav > ul> li{
   nav, .nav {
     display: none;
   }
+  .ads {
+    justify-content: flex-start;
+  }
   #promise {
     align-items: center !important;
     /* justify-content: center !important; */
@@ -236,6 +239,11 @@ nav > ul> li{
 @media (max-width: 1000px) {
   .menu-lii {
     display: none;
+  }
+  .ads {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   .second-nav {
     position:static;
@@ -361,7 +369,7 @@ nav > ul> li{
   }
   #childern {
     font-family: Poppins, sans-serif !important;
-}
+} 
   #header {
     flex-wrap: wrap;
   }

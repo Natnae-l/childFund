@@ -14,5 +14,8 @@ router.get('/signup', (req, res, next) => {
 router.get('/staff', async (req, res, next) => {
   res.render('front-page/staff');
 })
+router.get('/about-us', async (req, res, next) => {
+  res.render('front-page/aboutUs');
+})
 
 module.exports = router;
