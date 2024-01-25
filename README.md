@@ -18,3 +18,4 @@
 </ul>
 <h4>Impact:</h4>
 "VCO" serves as a pivotal tool in promoting the inclusivity and educational development of visually impaired children. By providing a platform for self-expression and interaction, coupled with a secure donation channel, it enables the NGO to further its cause while uplifting and empowering the visually impaired community.
+<a href='https://visioncharity.org.et/'>Live<a>
