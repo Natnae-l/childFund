@@ -1,8 +1,8 @@
 
     <img src="/images/download.svg" alt="" style="width: 100%;">
-    <footer
+    <footer id="sub"
             class=" text-lg-start text-white"
-            style="background-color: #506ba5; max-width: 100%; overflow: hidden; ">
+            style="background-color: #506ba5; max-width: 100%; overflow: hidden;  ">
 
           <section id="promise" style="display: flex; gap: 20px; justify-content: space-between; flex-wrap: wrap; padding: 1rem 6rem; align-items: flex-start; font-family: Poppins, sans-serif; margin-bottom: 2rem;">
             <form action="/subscribe" method="post">
@@ -11,7 +11,12 @@
               <label for="newsl" style="display: block;">Email</label>
               <input style="margin-bottom: 1rem;" type="email" name="email" id="newsl">
               <button type="submit" style="font-weight: 600; border-radius: 0.25rem; color: white; padding: 0.3rem; border: 1px solid transparent; background-color: rgb(39, 139, 39);">Subscribe</button>
-            </form>
+           <%if(locals.thanks != ''){%>
+              <p>Thanks for subscribing!</p> 
+           <%}%>
+              
+          </form>
+            
             <ul class="link-ul">
               <li><a href="https://www.instagram.com/visionforkidsethiopia" target="_blank"> <img src="/images/instagram.png" alt=""  class="s-links"></a></li>
               <li><a href="https://www.twitter.com/visionkids" target="_blank"><img src="/images/twitter.png" alt="" class="s-links"></a></li>

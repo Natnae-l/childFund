@@ -9,3 +9,6 @@ Array.from(document.querySelectorAll('.link')).forEach(item => {
     document.querySelector(".menu-lii").classList.remove("show");
 })
 })
+document.querySelector('#sub').addEventListener('submit', () => {
+    document.querySelector('body').style.backgroundColor = 'black'
+})

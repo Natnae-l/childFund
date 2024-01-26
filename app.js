@@ -73,9 +73,10 @@ app.use(flash());
 // global variable
 app.use((req, res, next) => {
   res.locals.currentUser = req.user;
-  res.locals.title = 'VCO charity';
+  res.locals.title = 'Vision Charity Organization';
   res.locals.success = req.flash('user') ;
   res.locals.error_msg = req.flash('error') || '';
+  res.locals.thanks = req.flash('thanks') || '';
   next();
 });
 
