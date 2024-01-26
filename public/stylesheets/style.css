@@ -278,6 +278,13 @@ nav > ul> li{
   footer > p{
     width: 90% !important;
   }
+  .member a{
+    max-width: 250px;
+  }
+  .staff {
+    flex-direction: column;
+    align-items: center;
+  }
 }
 
 @media(max-width: 766px) {
