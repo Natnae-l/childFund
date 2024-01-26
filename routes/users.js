@@ -27,7 +27,7 @@ router.post('/sendupdate',authenticate.ensureAuthenticated, upload.single('image
    })
    await newNews.save()
   // File upload was successful
-  res.redirect('/sendUpdate')
+  res.redirect('/dashboard/sendUpdate')
 });
 
 
@@ -75,6 +75,6 @@ router.post('/logout',authenticate.ensureAuthenticated, userController.logOut)
 // message controller
 // router.post('/sendupdate',authenticate.ensureAuthenticated, userController.sendNews)
 router.delete('/deletemessage/:_id',authenticate.ensureAuthenticated, userController.deleteMessage)
-router.post('/sendmessage',authenticate.ensureAuthenticated, userController.alertEmail)
+router.post('/sendmessage',authenticate.ensureAuthenticated, userController.sendMessage, userController.alertEmail)
 
 module.exports = router;

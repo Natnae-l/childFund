@@ -3,6 +3,7 @@ const Subscriber = require('../model/subModel');
 const Message = require('../model/messageModel');
 const bcrypt = require('bcryptjs')
 const moment = require('moment');
+const nodemailer = require("nodemailer");
 const { trusted } = require('mongoose');
 const fs = require('fs')
 const News = require('../model/newsModel')
@@ -169,7 +170,7 @@ sendMessage = async (req, res, next) => {
 alertEmail = async(req, res, next) => {
   try {
     const email = (await User.find({}, 'email')).map(item => item.email);
-  const nodemailer = require("nodemailer");
+  
 
 const transporter = nodemailer.createTransport({
    service: "gmail",
@@ -182,7 +183,7 @@ const transporter = nodemailer.createTransport({
 });
 
 const mailOptions = {
-   from: "natnaelmverse1@gmail.com",
+   from: process.env.email,
    to: email,
    subject: "VCO charity Org.",
    html: `<p>Greetings from VCO </p>
