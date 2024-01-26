@@ -240,6 +240,18 @@ nav > ul> li{
   .menu-lii {
     display: none;
   }
+  #ski {
+    align-items: flex-start !important;
+  }
+  #ski > section {
+    align-items: flex-start !important;
+  }
+  .skills {
+    justify-content: flex-start !important;
+  }
+  .menu-lii a, li{
+    font-size: 1.4rem !important;
+  }
   .ads {
     display: flex;
     flex-direction: column;
@@ -346,14 +358,14 @@ nav > ul> li{
   }
   .ads {
     align-items: flex-start !important;
-    width: 100vw;
-    margin-left: -5rem !important;
+    width: 95vw;
+    margin-left: -4rem !important;
   }
   header {
     width: 100vw !important;
   }
   .ads img {
-    width: 100vw !important;
+    width: 95vw !important;
   }
 }
 @media(max-width: 403px) {
@@ -365,7 +377,7 @@ nav > ul> li{
     padding: 2.5rem 1rem !important;
   }
   .mission h3 {
-    font-size: .8rem !important;
+    /* font-size: .8rem !important; */
   }
   #childern {
     font-family: Poppins, sans-serif !important;
